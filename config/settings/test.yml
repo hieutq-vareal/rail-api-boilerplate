@@ -1,0 +1,2 @@
+common:
+  rails_env: test
