@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module SessionStoreApi
   class BaseController < ApplicationController
     include ResponseHandler
     include ExceptionHandler

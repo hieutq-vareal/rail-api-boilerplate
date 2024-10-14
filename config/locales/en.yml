@@ -3,5 +3,9 @@ en:
   api:
     error:
       missing_required_param: "Missing required param"
+      unauthorised: "Unauthorised"
+      token_timeout: "Token timeout"
     message:
       missing_required_param_msg: "Please input full request params"
+      unauthorised_msg: "Please login"
+      token_timeout_msg: "Token timeout, please refresh token"

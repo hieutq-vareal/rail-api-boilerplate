@@ -1,2 +1,9 @@
 common:
   rails_env: development
+redis:
+  host: redis
+  port: 6379
+  db: 0
+  expire: 180
+  expire_issuance: 2592000
+

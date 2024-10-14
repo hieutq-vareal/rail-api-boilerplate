@@ -11,6 +11,7 @@ AllCops:
     - '**/spec_helper.rb'
     - 'node_modules/**/*'
     - 'bin/*'
+    - '**/config/initializers/devise.rb'
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes

@@ -19,11 +19,10 @@ module ExceptionHandler
   end
 
   API_ERROR_CODES = {
-    "400001": "missing_required_param"
-  }.freeze
-
-  STATUS_HTML_CODES = {
-    "400001": :bad_request
+    "400001": "missing_required_param",
+    "403001": "unauthorised",
+    "401001": "token_timeout",
+    "401002": "refresh_token_timeout"
   }.freeze
 
   private
@@ -34,7 +33,7 @@ module ExceptionHandler
     key = API_ERROR_CODES[message[:code].to_sym]
     error_title = I18n.t("api.error.#{key}")
     error_message = I18n.t("api.message.#{key}_msg")
-    error_html = STATUS_HTML_CODES[message[:code].to_sym] || :bad_request
+    error_html = message[:code]&.slice(0, 3) || 400
 
     error_data = {
       "error_code": message[:code],

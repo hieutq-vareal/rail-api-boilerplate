@@ -14,6 +14,9 @@ module RailApiBoilerplate
     config.load_defaults 7.0
     config.i18n.default_locale = :en
     config.i18n.enforce_available_locales = true
+    config.session_store :cookie_store, key: "_rail_api_boilerplate_session"
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use config.session_store, config.session_options
 
     # Configuration for the application, engines, and railties goes here.
     #
