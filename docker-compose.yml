@@ -26,6 +26,10 @@ services:
       - db
     environment:
       RAILS_ENV: ${RAILS_ENV}
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
 volumes:
   db_volumes:
   gem-local:
